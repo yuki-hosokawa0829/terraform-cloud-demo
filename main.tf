@@ -16,6 +16,11 @@ terraform {
       source  = "hashicorp/random"
       version = "3.3.2"
     }
+
+    azurerm = {
+      source = "hashicorp/azurerm"
+      version = "3.54.0"
+    }
   }
 
   required_version = ">= 1.6.0"
@@ -23,7 +28,6 @@ terraform {
 
 provider "azurerm" {
   features {}
-  
 }
 
 resource "random_pet" "pet_name" {
