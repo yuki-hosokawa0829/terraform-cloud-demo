@@ -48,3 +48,11 @@ module "network" {
   prefix              = random_pet.pet_name.id
   resource_group_name = azurerm_resource_group.example.name
 }
+
+#module "network" {
+#  source = "./modules/network"
+#
+#  location            = var.location
+#  prefix              = random_pet.pet_name.id
+#  resource_group_name = azurerm_resource_group.example.name
+#}
