@@ -18,7 +18,7 @@ terraform {
     }
 
     azurerm = {
-      source = "hashicorp/azurerm"
+      source  = "hashicorp/azurerm"
       version = "3.54.0"
     }
   }
@@ -41,8 +41,9 @@ resource "azurerm_resource_group" "example" {
 }
 
 module "network" {
-  source = "./modules/network"
+  source = "app.terraform.io/yuki-tf-workspace/vnet/azure"
 
+  version             = "1.0.0"
   location            = var.location
   prefix              = random_pet.pet_name.id
   resource_group_name = azurerm_resource_group.example.name
