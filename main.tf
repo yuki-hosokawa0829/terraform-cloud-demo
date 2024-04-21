@@ -47,6 +47,10 @@ module "network" {
   location            = var.location
   prefix              = random_pet.pet_name.id
   resource_group_name = azurerm_resource_group.example.name
+  network_range       = var.network_range
+  peer_network_range  = var.peer_network_range
+  number_of_subnets   = var.number_of_subnets
+  number_of_peering_subnets = var.number_of_peering_subnets
 }
 
 #module "network" {
