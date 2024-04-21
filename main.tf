@@ -43,13 +43,13 @@ resource "azurerm_resource_group" "example" {
 module "network" {
   source = "app.terraform.io/yuki-tf-workspace/vnet/azure"
 
-  version             = "1.0.0"
-  location            = var.location
-  prefix              = random_pet.pet_name.id
-  resource_group_name = azurerm_resource_group.example.name
-  network_range       = var.network_range
-  peer_network_range  = var.peer_network_range
-  number_of_subnets   = var.number_of_subnets
+  version                   = "1.0.1"
+  location                  = var.location
+  prefix                    = random_pet.pet_name.id
+  resource_group_name       = azurerm_resource_group.example.name
+  network_range             = var.network_range
+  peer_network_range        = var.peer_network_range
+  number_of_subnets         = var.number_of_subnets
   number_of_peering_subnets = var.number_of_peering_subnets
 }
 
